@@ -37,7 +37,7 @@ const editItem = async (req, res) => {
 
 const deleteItem = async (req, res) => {
   try {
-    await itemModel.findByIdAndDelete({ _id: req.body._id});
+    await itemModel.findByIdAndDelete({ _id: req.params.itemId});
     res.status(202);
     res.json("Successfully deleted item")
   } catch (error) {

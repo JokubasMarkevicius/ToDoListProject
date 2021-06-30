@@ -17,6 +17,7 @@ import { faEdit, fas, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { DialogButtonComponent } from './list-container/dialog-button/dialog-button.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MaterialModule,
     FontAwesomeModule,
     FormsModule,

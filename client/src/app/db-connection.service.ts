@@ -1,9 +1,20 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
+import { ListItem } from './types';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DbConnectionService {
+  constructor(private http: HttpClient) {}
 
-  constructor() { }
+  getListItems() {
+    return this.http.get<ListItem[]>('http://localhost:3000/getList');
+  }
+
+  deleteListItem(id: string) {
+    this.http.delete(`http://localhost:3000/deleteItem/${id}`).subscribe();
+  }
 }

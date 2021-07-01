@@ -15,6 +15,6 @@ export class DbConnectionService {
   }
 
   deleteListItem(id: string) {
-    this.http.delete(`http://localhost:3000/deleteItem/${id}`).subscribe();
+    return this.http.delete(`http://localhost:3000/deleteItem/${id}`);
   }
 }

@@ -21,7 +21,9 @@ export class ListComponent implements AfterViewInit {
   }
 
   deleteItem(id: string) {
-    this.db.deleteListItem(id);
+    this.db.deleteListItem(id).subscribe(() => {
+      this.getListData();
+    });
   }
 
   dataSource?: any;
